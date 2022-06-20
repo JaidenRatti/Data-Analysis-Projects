@@ -115,16 +115,30 @@ def avg_speed(bike_data):
         avg_bike_speeds.append(real_avg_bike_speed)
     return avg_bike_speeds
 
+def max_speed(bike_data):
+    max_bike_speeds = []
+    for data in bike_data:
+        raw_max_bike_speed = data["max_speed"]
+        real_max_bike_speed = round(raw_max_bike_speed*3.6,2)
+        #convert from m/s to km/h
+        max_bike_speeds.append(real_max_bike_speed)
+    return max_bike_speeds
+
+bike_distance_list = distances(bike_list)
+bike_avg_speed_list = avg_speed(bike_list)
+bike_max_speed_list = max_speed(bike_list)
+#print(bike_avg_speed_list)
+#print(bike_max_speed_list)
+highest_speed = max(bike_max_speed_list)
+print("Highest Speed Recorded is " +str(highest_speed)+ "km/h")
 
 dates = date_range("2020-01-01","2020-12-31")
 data = np.random.randint(0,14,len(dates))
 july.heatmap(dates, data, title='Bike Activity', cmap="github")
 
-bike_distance_list = distances(bike_list)
-bike_avg_speed_list = avg_speed(bike_list)
-#print(bike_avg_speed_list)
 
 style.use('fast')
+
 figure1 = plt.figure("Figure 1")
 ax1 = figure1.add_subplot(1,1,1)
 
@@ -140,7 +154,7 @@ def animate(data):
     ax1.set_xlabel('xth bike ride')
     ax1.set_ylabel('distance in km')
     ax1.set_title('Bike Rides & Distances')
-ani = animation.FuncAnimation(figure1, animate(bike_distance_list), interval=1000)
+ani = animation.FuncAnimation(figure1, animate(bike_distance_list))
 
 figure2 = plt.figure("Figure 2")
 
@@ -154,6 +168,6 @@ def animate2(distances,avgspeed):
     plt.title('Avg Speed (km/h) vs Distance (km)')
     plt.xlabel('Distance (km)')
     plt.ylabel('Average Speed (km/h)')
-an = animation.FuncAnimation(figure2, animate2(bike_distance_list, bike_avg_speed_list), interval=1000)
+an = animation.FuncAnimation(figure2, animate2(bike_distance_list, bike_avg_speed_list))
 
 plt.show()
