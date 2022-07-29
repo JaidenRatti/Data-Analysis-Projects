@@ -1,3 +1,3 @@
 # Strava Data Analysis
 
-Analyzing Strava data with python (using the Strava API) and visually displaying data with pandas, matplotlib and other libraries. 
+Analyzing my live Strava data with python. Visually displaying data with pandas, graphing with matplotlib & calplot, and plotting on geomap with polyline & folium. 
