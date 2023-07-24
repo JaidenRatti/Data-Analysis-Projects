@@ -2,7 +2,7 @@
 
 ## What is this? ##
 
-[Recommendation.ipynb]([url](https://github.com/JaidenRatti/Data-Analysis-Projects/blob/main/Spotify%20Analysis/Recommendation.ipynb)) recommends songs by taking in two public Spotify links. 
+[Recommendation.ipynb](https://github.com/JaidenRatti/Data-Analysis-Projects/blob/main/Spotify%20Analysis/Recommendation.ipynb) recommends songs by taking in two public Spotify links. 
 
 The first link is either a 
 - playlist: this is the 'seed' playlist (the one you want to add songs to)
